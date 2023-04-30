@@ -1,0 +1,26 @@
+﻿@model TestParks.Models.Park
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Display</title>
+   
+</head>
+<body>
+    <div class="model-box">
+        <div class="model-card">
+            <div class="model-name">@Model.Name</div>
+            <img class="model-image" src="https://raw.githubusercontent.com/GiorgioMotorola/ParksJson/main/Katmai_Crater_1980.jpg" alt="">
+            <div class="model-coordinates" >Coordinates: @Model.Coordinates</div>
+            <div class="model-dateEstAsPark">Date Est: @Model.DateEstAsPark</div>
+            <div class="model-description">@Model.Description</div>           
+        </div>
+    </div>
+    <br></br>
+    <div class="google-maps">
+    <iframe src="@Model.ParkMap" width="1200" height="450" style="border:15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</body>
+</html>
+

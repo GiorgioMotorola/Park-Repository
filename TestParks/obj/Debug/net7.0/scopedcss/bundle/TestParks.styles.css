@@ -1,0 +1,101 @@
+/* _content/TestParks/Views/Park/Details.cshtml.rz.scp.css */
+
+.model-box[b-thnqq7207f] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.model-card[b-thnqq7207f] {
+    width: 1200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    align-content: center;
+}
+
+.model-image[b-thnqq7207f] {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.model-name[b-thnqq7207f] {
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+}
+
+.model-coordinates[b-thnqq7207f] {
+    margin-top: 5px;
+}
+
+.model-dateEstAsPark[b-thnqq7207f] {
+    margin-top: 5px;
+}
+
+.model-description[b-thnqq7207f] {
+    margin-top: 10px;
+}
+
+.google-maps[b-thnqq7207f] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+/* _content/TestParks/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-1sjrh5tb35] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-1sjrh5tb35] {
+  color: #0077cc;
+}
+
+.btn-primary[b-1sjrh5tb35] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-1sjrh5tb35], .nav-pills .show > .nav-link[b-1sjrh5tb35] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-1sjrh5tb35] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-1sjrh5tb35] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-1sjrh5tb35] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-1sjrh5tb35] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-1sjrh5tb35] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

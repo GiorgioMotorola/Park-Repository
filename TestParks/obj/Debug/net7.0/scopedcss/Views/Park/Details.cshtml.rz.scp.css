@@ -1,0 +1,51 @@
+
+.model-box[b-thnqq7207f] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.model-card[b-thnqq7207f] {
+    width: 1200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    align-content: center;
+}
+
+.model-image[b-thnqq7207f] {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.model-name[b-thnqq7207f] {
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+}
+
+.model-coordinates[b-thnqq7207f] {
+    margin-top: 5px;
+}
+
+.model-dateEstAsPark[b-thnqq7207f] {
+    margin-top: 5px;
+}
+
+.model-description[b-thnqq7207f] {
+    margin-top: 10px;
+}
+
+.google-maps[b-thnqq7207f] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

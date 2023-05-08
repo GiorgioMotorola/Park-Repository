@@ -1,33 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-
+using System.Diagnostics;
 using TestParks.Models;
 
 namespace TestParks.Controllers
 {
     public class ParkController : Controller
     {
-        
-        public async Task<IActionResult> Index(string sortOrder)
+
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
+
             List<Park> parks = await RetrieveNationalParks();
-            
+
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["StateSortParm"] = String.IsNullOrEmpty(sortOrder) ? "state_desc" : "";
+
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                parks = parks.Where(p => p.State.ToLower().Contains(searchString.ToLower())).ToList();
+            }
 
             switch (sortOrder)
             {
                 case "name_desc":
                     parks = parks.OrderByDescending(i => i.Name).ToList();
-                    ViewBag.CurrentSort = "desc";
+                    break;
+                case "state_desc":
+                    parks = parks.OrderByDescending(i => i.State).ToList();
+                    break;
+                case "state_asc":
+                    parks = parks.OrderBy(i => i.State).ToList();
+                    break;
+                case "state":
+                    parks = parks.OrderBy(i => i.State).ToList();
                     break;
                 default:
                     parks = parks.OrderBy(i => i.Name).ToList();
-                    ViewBag.CurrentSort = "asc";
                     break;
             }
+
+
             return View(parks);
-        }        
+        }
 
         public async Task<List<Park>> RetrieveNationalParks()
         {
@@ -44,11 +62,11 @@ namespace TestParks.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            
+
             List<Park> parks = await RetrieveNationalParks();
 
-            
-                Park park = parks.FirstOrDefault(p => p.Id == id);
+
+            Park park = parks.FirstOrDefault(p => p.Id == id);
 
             if (park == null)
             {
@@ -57,13 +75,13 @@ namespace TestParks.Controllers
 
             return View(park);
         }
-  
+
         public ActionResult Create()
         {
             return View();
         }
 
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -77,13 +95,13 @@ namespace TestParks.Controllers
                 return View();
             }
         }
-       
+
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -98,13 +116,13 @@ namespace TestParks.Controllers
             }
         }
 
-        
+
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-       
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
@@ -118,5 +136,8 @@ namespace TestParks.Controllers
                 return View();
             }
         }
+
+        
+
     }
 }

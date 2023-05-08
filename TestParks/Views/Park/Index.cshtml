@@ -1,11 +1,15 @@
-﻿@model IEnumerable<TestParks.Models.Park>
+﻿@*@model IEnumerable<TestParks.Models.Park>
 
-<table>
+<table >
     <thead>
         <tr>
+            
             <th>
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
+                <a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_asc" ? "state_desc" : "state_asc")">@Html.DisplayNameFor(model => model.State) &uarr;</a>
+                <a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_desc" ? "state_asc" : "state_desc")">@Html.DisplayNameFor(model => model.State) &darr;</a>
             </th>
+
             
         </tr>
     </thead>
@@ -14,6 +18,7 @@
         {
             <tr>
                 <td>@park.Name</td>
+                <td>@park.State</td>
                 <td>@Html.ActionLink("Details", "Details", new {  id= park.Id  }) </td>
             </tr>
         }
@@ -25,7 +30,62 @@
         var newSortOrder = currentSortOrder === "asc" ? "desc" : "asc";
         location.href = '@Url.Action("Index")?sortOrder=' + newSortOrder;
     }
+</script>*@
+
+@model IEnumerable<TestParks.Models.Park>
+
+@*<form method="get" asp-controller="Park" asp-action="Index" class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchString">
+    <button class="btnbtn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>*@
+
+
+
+
+
+
+   
+<div class="mt-3">
+    <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]"><span style="margin-right: 350px">Sort by Name</span></a>
+    <a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_asc" ? "state_desc" : "state_asc")"><span style="margin-right: 350px">Sort by State (asc)</span></a>
+    <a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_desc" ? "state_asc" : "state_desc")">Sort by State(desc)</a>
+
+    <img src="https://raw.githubusercontent.com/GiorgioMotorola/ParksJson/main/usmap2.png" width="704" height="440" alt="Us Map" usemap="#usmap">
+    
+    <map id="usmap" name="usmap">
+        <area shape="rect" coords="67, 346, 98, 384" alt="Alaska" href="Park?searchString=Alaska">
+        <area shape="rect" coords="520, 233, 482, 214" alt="Kentucky" href="Park?searchString=Kentucky">
+        <area shape="rect" coords="125, 222, 171, 305" alt="Arizona" href="Park?searchString=Arizona">
+        <area shape="rect" coords="79, 25, 121, 76" alt="Washington" href="Park?searchString=Washington">
+        <area shape="rect" coords="0, 0, 32, 32" alt="Reset" href="Park">
+    </map>
+
+</div>
+
+<div class="card-deck">
+    @foreach (var park in Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@park.Name</h5>
+                <h5 class="card-text">@park.State </h5>
+                
+                <img class="model-image-one" src="@park.ImageUrlOne" alt="">
+                <a href="@Url.Action("Details", "Park", new {  id= park.Id  })" class="btn btn-primary">View Park</a>   
+            </div>
+            
+        </div>
+    }
+
+
+
+<script>
+    function toggleSortOrder(currentSortOrder) {
+        var newSortOrder = currentSortOrder === "asc" ? "desc" : "asc";
+        location.href = '@Url.Action("Index")?sortOrder=' + newSortOrder;
+    }
 </script>
+
 
 
 

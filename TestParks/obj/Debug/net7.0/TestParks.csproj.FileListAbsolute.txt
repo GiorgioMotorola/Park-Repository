@@ -251,3 +251,4 @@ C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\System.Web.
 C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\System.Web.WebPages.Razor.dll
 C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\System.Web.WebPages.dll
 C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\Microsoft.Web.Infrastructure.dll
+C:\Users\downw\Desktop\projects\TestParks\TestParks\obj\Debug\net7.0\scopedcss\Views\Park\Index.cshtml.rz.scp.css

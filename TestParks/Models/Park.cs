@@ -15,5 +15,6 @@
         public string? Area { get; set; }
         public string? Description { get; set; }
         public string? Geography { get; set; }
+        public List<Comment>? Comments { get; set; }
     }
 }

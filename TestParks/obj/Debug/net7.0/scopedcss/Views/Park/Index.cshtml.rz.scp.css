@@ -1,0 +1,52 @@
+.mt-3[b-fu46n5x1v5] {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.model-image-one[b-fu46n5x1v5] {
+    width: 350px;
+    height: 300px;
+    margin-left: 200px;
+}
+
+.card[b-fu46n5x1v5] {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin-left: 250px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    border: double;
+    background-color: aliceblue;
+    margin-bottom: 10px;
+}
+
+    .card:hover[b-fu46n5x1v5] {
+        opacity: 0.8;
+        background-color: floralwhite;
+    }
+
+.btn[b-fu46n5x1v5] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.card-title[b-fu46n5x1v5] {
+    text-align: center;
+    font-weight: 600;
+}
+
+.card-text[b-fu46n5x1v5] {
+    text-align: center;
+    font-family: Courier New;
+    font-size: large;
+}
+
+

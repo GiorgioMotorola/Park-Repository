@@ -7,16 +7,29 @@
    
 </head>
 <body>
+    <div class="model-name">@Model.Name
+        <img class="model-state-icon" src="@Model.StateIcon" alt="" />        
+    </div>
+
+    <div class="model-description">@Model.Description</div>
+
     <div class="model-box">
         <div class="model-card">
-            <div class="model-name">@Model.Name</div>
-            <img class="model-image" src="https://raw.githubusercontent.com/GiorgioMotorola/ParksJson/main/Katmai_Crater_1980.jpg" alt="">
-            <div class="model-coordinates" >Coordinates: @Model.Coordinates</div>
-            <div class="model-dateEstAsPark">Date Est: @Model.DateEstAsPark</div>
-            <div class="model-description">@Model.Description</div>           
-        </div>
+            <div class="image-container">
+                <img class="model-image-one" src="@Model.ImageUrlOne" alt="">
+                <img class="model-image-two" src="@Model.ImageUrlTwo" alt="">
+                <img class="model-image-three" src="@Model.ImageUrlThree" alt="">
+            </div>
+        </div>       
     </div>
-    <br></br>
+
+    <div class="metrics-container">
+        <div class="model-date-est"><span style="color: seagreen ">DATE ESTABLISHED AS PARK: </span> @Model.DateEstAsPark</div>
+        <div class="model-coordinates"><span style="color: seagreen ">PARK COORDINATES: </span> @Model.Coordinates</div>
+        <div class="model-area"><span style="color: seagreen ">PARK AREA: </span> @Model.Area</div>
+    </div>
+
+    <div class="model-geography">@Model.Geography</div> 
     <div class="google-maps">
     <iframe src="@Model.ParkMap" width="1200" height="450" style="border:15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>

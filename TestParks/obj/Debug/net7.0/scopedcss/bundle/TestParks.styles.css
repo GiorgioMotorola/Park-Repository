@@ -1,25 +1,40 @@
 /* _content/TestParks/Views/Park/Details.cshtml.rz.scp.css */
 
 .model-box[b-thnqq7207f] {
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    
+    
 }
 
 .model-card[b-thnqq7207f] {
-    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    width: 3000px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     align-content: center;
+    font-family: Bahnschrift;
+    margin-left: -290px;
+    background-color: floralwhite;
 }
 
-.model-image[b-thnqq7207f] {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 5px;
+.image-container[b-thnqq7207f] {
+    display: flex;
+    flex-direction: row;
+}
+
+.model-image-one[b-thnqq7207f],
+.model-image-two[b-thnqq7207f],
+.model-image-three[b-thnqq7207f] {
+    width: 600px;
+    height: 500px;
+    margin-right: 10px;
+    margin-left: 10px
 }
 
 .model-name[b-thnqq7207f] {
@@ -28,27 +43,64 @@
     display: flex;
     justify-content: center; 
     align-items: center; 
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-family: 'Arial Rounded MT';
     font-size: xx-large;
+    margin-bottom: 30px;
+    
+    
 }
 
-.model-coordinates[b-thnqq7207f] {
-    margin-top: 5px;
+.model-state-icon[b-thnqq7207f] {
+    height: 50px;
+    width: 50px;
 }
 
-.model-dateEstAsPark[b-thnqq7207f] {
-    margin-top: 5px;
+.metrics-container[b-thnqq7207f] {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.model-date-est[b-thnqq7207f],
+.model-coordinates[b-thnqq7207f],
+.model-area[b-thnqq7207f] {
+    margin-right: 50px;
+    margin-left: 50px;
+    font-weight: 600;
 }
 
 .model-description[b-thnqq7207f] {
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'Bell MT';
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+}
+
+.model-geography[b-thnqq7207f] {
+    font-family: Arial;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
 }
 
 .google-maps[b-thnqq7207f] {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    width: 1000px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 150px;
 }
 /* _content/TestParks/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification

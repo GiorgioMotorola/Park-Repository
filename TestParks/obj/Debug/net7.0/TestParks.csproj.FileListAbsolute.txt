@@ -244,3 +244,10 @@ C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\runtimes\wi
 C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\downw\Desktop\projects\TestParks\TestParks\obj\Debug\net7.0\scopedcss\Views\Park\Details.cshtml.rz.scp.css
+C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\System.Web.Mvc.dll
+C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\System.Web.Razor.dll
+C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\System.Web.Helpers.dll
+C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\System.Web.WebPages.Deployment.dll
+C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\System.Web.WebPages.Razor.dll
+C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\System.Web.WebPages.dll
+C:\Users\downw\Desktop\projects\TestParks\TestParks\bin\Debug\net7.0\Microsoft.Web.Infrastructure.dll

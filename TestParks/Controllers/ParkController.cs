@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+
 using TestParks.Models;
 
 namespace TestParks.Controllers
@@ -8,15 +9,27 @@ namespace TestParks.Controllers
     public class ParkController : Controller
     {
         
-        public ActionResult Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
+            List<Park> parks = await RetrieveNationalParks();
             
-            List<Park> parks = RetrieveNationalParks();
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
 
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    parks = parks.OrderByDescending(i => i.Name).ToList();
+                    ViewBag.CurrentSort = "desc";
+                    break;
+                default:
+                    parks = parks.OrderBy(i => i.Name).ToList();
+                    ViewBag.CurrentSort = "asc";
+                    break;
+            }
             return View(parks);
-        }
+        }        
 
-        private List<Park> RetrieveNationalParks()
+        public async Task<List<Park>> RetrieveNationalParks()
         {
             string jsonUrl = "https://raw.githubusercontent.com/GiorgioMotorola/ParksJson/main/json";
 
@@ -29,10 +42,10 @@ namespace TestParks.Controllers
             }
         }
 
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
             
-            List<Park> parks = RetrieveNationalParks();
+            List<Park> parks = await RetrieveNationalParks();
 
             
                 Park park = parks.FirstOrDefault(p => p.Id == id);
@@ -44,8 +57,7 @@ namespace TestParks.Controllers
 
             return View(park);
         }
-
-        
+  
         public ActionResult Create()
         {
             return View();
@@ -65,8 +77,7 @@ namespace TestParks.Controllers
                 return View();
             }
         }
-
-        
+       
         public ActionResult Edit(int id)
         {
             return View();

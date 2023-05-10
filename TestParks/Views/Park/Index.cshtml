@@ -1,82 +1,90 @@
 ﻿@model IEnumerable<TestParks.Models.Park>
 
-<div class="mt-3">
-    <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]"><span style="margin-right: 350px">Sort by Name</span></a>
-    <a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_asc" ? "state_desc" : "state_asc")"><span style="margin-right: 350px">Sort by State (asc)</span></a>
-    <a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_desc" ? "state_asc" : "state_desc")">Sort by State(desc)</a>
 
-    <img src="https://raw.githubusercontent.com/GiorgioMotorola/ParksJson/main/usmap.png" width="904" height="640" alt="Us Map" usemap="#usmap">
-    
-    <map id="usmap" name="usmap">
-        <area shape="rect" coords="122, 464, 271, 601" alt="Alaska" href="Park?searchString=Alaska">
-        <area shape="rect" coords="568, 359, 601, 423" alt="Alabama" href="Park?searchString=Alabama">
-        <area shape="rect" coords="183, 320, 247, 419" alt="Arizona" href="Park?searchString=Arizona">
-        <area shape="rect" coords="472, 326, 514, 375" alt="Arkansas" href="Park?searchString=Arkansas">
-        <area shape="rect" coords="31, 244, 164, 391" alt="California" href="Park?searchString=California">
-        <area shape="rect" coords="257, 237, 350, 308" alt="Colorado" href="Park?searchString=Colorado">
-        <area shape="rect" coords="830, 239, 858, 259" alt="Connecticut" href="Park?searchString=Connecticut">
-        <area shape="rect" coords="799, 291, 833, 310" alt="Delaware" href="Park?searchString=Delaware">
-        <area shape="rect" coords="580, 430, 675, 534" alt="Florida" href="Park?searchString=Florida">
-        <area shape="rect" coords="604, 359, 650, 425" alt="Georgia" href="Park?searchString=Georgia">
-        <area shape="rect" coords="510, 523, 607, 611" alt="Hawaii" href="Park?searchString=Hawaii">
-        <area shape="rect" coords="139, 145, 217, 203" alt="Idaho" href="Park?searchString=Idaho">
-        <area shape="rect" coords="537, 203, 557, 296" alt="Illinois" href="Park?searchString=Illinois">
-        <area shape="rect" coords="576, 222, 594, 285" alt="Indiana" href="Park?searchString=Indiana">
-        <area shape="rect" coords="444, 183, 515, 233" alt="Iowa" href="Park?searchString=Iowa">
-        <area shape="rect" coords="361, 256, 459, 306" alt="Kansas" href="Park?searchString=Kansas">
-        <area shape="rect" coords="549, 319, 637, 280" alt="Kentucky" href="Park?searchString=Kentucky">
-        <area shape="rect" coords="480, 403, 533, 458" alt="Louisiana" href="Park?searchString=Louisiana">
-        <area shape="rect" coords="854, 91, 823, 174" alt="Maine" href="Park?searchString=Maine">
-        <area shape="rect" coords="797, 319, 830, 337" alt="Maryland" href="Park?searchString=Maryland">
-        <area shape="rect" coords="851, 187, 881, 205" alt="Massachusetts" href="Park?searchString=Massachusetts">
-        <area shape="rect" coords="608, 139, 629, 210" alt="Michigan" href="Park?searchString=Michigan">
-        <area shape="rect" coords="432, 54, 483, 172" alt="Minnesota" href="Park?searchString=Minnesota">
-        <area shape="rect" coords="533, 357, 553, 435" alt="Mississippi" href="Park?searchString=Mississippi">
-        <area shape="rect" coords="470, 240, 538, 318" alt="Missouri" href="Park?searchString=Missouri">
-        <area shape="rect" coords="155, 53, 319, 135" alt="Montana" href="Park?searchString=Montana">
-        <area shape="rect" coords="348, 191, 443, 245" alt="Nebraska" href="Park?searchString=Nebraska">
-        <area shape="rect" coords="97, 214, 167, 327" alt="Nevada" href="Park?searchString=Nevada">
-        <area shape="rect" coords="788, 99, 816, 120" alt="New Hampshire" href="Park?searchString=New Hampshire">
-        <area shape="rect" coords="812, 267, 839, 284" alt="New Jersey" href="Park?searchString=New Jersey">
-        <area shape="rect" coords="257, 317, 333, 402" alt="New Mexico" href="Park?searchString=New Mexico">
-        <area shape="rect" coords="775, 148, 730, 205" alt="New York" href="Park?searchString=New York">
-        <area shape="rect" coords="662, 326, 716, 366" alt="North Carolina" href="Park?searchString=North Carolina">
-        <area shape="rect" coords="333, 54, 431, 117" alt="North Dakota" href="Park?searchString=North Dakota">
-        <area shape="rect" coords="617, 220, 649, 267" alt="Ohio" href="Park?searchString=Ohio">
-        <area shape="rect" coords="391, 317, 465, 372" alt="Oklahoma" href="Park?searchString=Oklahoma">
-        <area shape="rect" coords="37, 121, 127, 203" alt="Oregon" href="Park?searchString=Oregon">
-        <area shape="rect" coords="682, 213, 750, 251" alt="Pennsylvania" href="Park?searchString=Pennsylvania">
-        <area shape="rect" coords="853, 215, 874, 234" alt="Rhode Island" href="Park?searchString=Rhode Island">
-        <area shape="rect" coords="648, 352, 680, 401" alt="South Carolina" href="Park?searchString=South Carolina">
-        <area shape="rect" coords="333, 127, 434, 188" alt="South Dakota" href="Park?searchString=South Dakota">
-        <area shape="rect" coords="542, 338, 627, 339" alt="Tennessee" href="Park?searchString=Tennessee">
-        <area shape="rect" coords="348, 329, 423, 520" alt="Texas" href="Park?searchString=Texas">
-        <area shape="rect" coords="185, 217, 244, 307" alt="Utah" href="Park?searchString=Utah">
-        <area shape="rect" coords="751, 110, 778, 129" alt="Vermont" href="Park?searchString=Vermont">
-        <area shape="rect" coords="679, 303, 735, 316" alt="Virginia" href="Park?searchString=Virginia">
-        <area shape="rect" coords="56, 53, 128, 115" alt="Washington" href="Park?searchString=Washington">
-        <area shape="rect" coords="654, 283, 700, 268" alt="West Virginia" href="Park?searchString=West Virginia">
-        <area shape="rect" coords="516, 107, 561, 192" alt="Wisconsin" href="Park?searchString=Wisconsin">
-        <area shape="rect" coords="227, 147, 320, 223" alt="Wyoming" href="Park?searchString=Wyoming">
+<a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]"><span style="margin-right: 350px">Sort by Name</span></a>
+<a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_asc" ? "state_desc" : "state_asc")"><span style="margin-right: 350px">Sort by State (asc)</span></a>
+<a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_desc" ? "state_asc" : "state_desc")">Sort by State(desc)</a>
 
-    </map>
-
-</div>
-
-<div class="card-deck">
-    @foreach (var park in Model)
-    {
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">@park.Name</h5>
-                <h5 class="card-text">@park.State </h5>
-                
-                <img class="model-image-one" src="@park.ImageUrlOne" alt="">
-                <a href="@Url.Action("Details", "Park", new {  id= park.Id  })" class="btn btn-primary">View Park</a>   
-            </div>
+    <div class="d-flex mt-3">
+        <div class="map-container mr-3">
             
+
+            <img src="https://raw.githubusercontent.com/GiorgioMotorola/ParksJson/main/usmap.png" width="904" height="640" alt="Us Map" usemap="#usmap">
+
+            <map id="usmap" name="usmap">
+                <area shape="rect" coords="122, 464, 271, 601" alt="Alaska" href="Park?searchString=Alaska">
+                <area shape="rect" coords="568, 359, 601, 423" alt="Alabama" href="Park?searchString=Alabama">
+                <area shape="rect" coords="183, 320, 247, 419" alt="Arizona" href="Park?searchString=Arizona">
+                <area shape="rect" coords="472, 326, 514, 375" alt="Arkansas" href="Park?searchString=Arkansas">
+                <area shape="rect" coords="61, 325, 140, 328" alt="California" href="Park?searchString=California">
+                <area shape="rect" coords="257, 237, 350, 308" alt="Colorado" href="Park?searchString=Colorado">
+                <area shape="rect" coords="830, 239, 858, 259" alt="Connecticut" href="Park?searchString=Connecticut">
+                <area shape="rect" coords="799, 291, 833, 310" alt="Delaware" href="Park?searchString=Delaware">
+                <area shape="rect" coords="580, 430, 675, 534" alt="Florida" href="Park?searchString=Florida">
+                <area shape="rect" coords="604, 359, 650, 425" alt="Georgia" href="Park?searchString=Georgia">
+                <area shape="rect" coords="510, 523, 607, 611" alt="Hawaii" href="Park?searchString=Hawaii">
+                <area shape="rect" coords="139, 145, 217, 203" alt="Idaho" href="Park?searchString=Idaho">
+                <area shape="rect" coords="537, 203, 557, 296" alt="Illinois" href="Park?searchString=Illinois">
+                <area shape="rect" coords="576, 222, 594, 285" alt="Indiana" href="Park?searchString=Indiana">
+                <area shape="rect" coords="444, 183, 515, 233" alt="Iowa" href="Park?searchString=Iowa">
+                <area shape="rect" coords="361, 256, 459, 306" alt="Kansas" href="Park?searchString=Kansas">
+                <area shape="rect" coords="549, 319, 637, 280" alt="Kentucky" href="Park?searchString=Kentucky">
+                <area shape="rect" coords="480, 403, 533, 458" alt="Louisiana" href="Park?searchString=Louisiana">
+                <area shape="rect" coords="854, 91, 823, 174" alt="Maine" href="Park?searchString=Maine">
+                <area shape="rect" coords="797, 319, 830, 337" alt="Maryland" href="Park?searchString=Maryland">
+                <area shape="rect" coords="851, 187, 881, 205" alt="Massachusetts" href="Park?searchString=Massachusetts">
+                <area shape="rect" coords="608, 139, 629, 210" alt="Michigan" href="Park?searchString=Michigan">
+                <area shape="rect" coords="432, 54, 483, 172" alt="Minnesota" href="Park?searchString=Minnesota">
+                <area shape="rect" coords="533, 357, 553, 435" alt="Mississippi" href="Park?searchString=Mississippi">
+                <area shape="rect" coords="470, 240, 538, 318" alt="Missouri" href="Park?searchString=Missouri">
+                <area shape="rect" coords="155, 53, 319, 135" alt="Montana" href="Park?searchString=Montana">
+                <area shape="rect" coords="348, 191, 443, 245" alt="Nebraska" href="Park?searchString=Nebraska">
+                <area shape="rect" coords="97, 214, 167, 327" alt="Nevada" href="Park?searchString=Nevada">
+                <area shape="rect" coords="788, 99, 816, 120" alt="New Hampshire" href="Park?searchString=New Hampshire">
+                <area shape="rect" coords="812, 267, 839, 284" alt="New Jersey" href="Park?searchString=New Jersey">
+                <area shape="rect" coords="257, 317, 333, 402" alt="New Mexico" href="Park?searchString=New Mexico">
+                <area shape="rect" coords="775, 148, 730, 205" alt="New York" href="Park?searchString=New York">
+                <area shape="rect" coords="662, 326, 716, 366" alt="North Carolina" href="Park?searchString=North Carolina">
+                <area shape="rect" coords="333, 54, 431, 117" alt="North Dakota" href="Park?searchString=North Dakota">
+                <area shape="rect" coords="617, 220, 649, 267" alt="Ohio" href="Park?searchString=Ohio">
+                <area shape="rect" coords="391, 317, 465, 372" alt="Oklahoma" href="Park?searchString=Oklahoma">
+                <area shape="rect" coords="37, 121, 127, 203" alt="Oregon" href="Park?searchString=Oregon">
+                <area shape="rect" coords="682, 213, 750, 251" alt="Pennsylvania" href="Park?searchString=Pennsylvania">
+                <area shape="rect" coords="853, 215, 874, 234" alt="Rhode Island" href="Park?searchString=Rhode Island">
+                <area shape="rect" coords="648, 352, 680, 401" alt="South Carolina" href="Park?searchString=South Carolina">
+                <area shape="rect" coords="333, 127, 434, 188" alt="South Dakota" href="Park?searchString=South Dakota">
+                <area shape="rect" coords="590, 323, 588, 349" alt="Tennessee" href="Park?searchString=Tennessee">
+                <area shape="rect" coords="348, 329, 423, 520" alt="Texas" href="Park?searchString=Texas">
+                <area shape="rect" coords="185, 217, 244, 307" alt="Utah" href="Park?searchString=Utah">
+                <area shape="rect" coords="751, 110, 778, 129" alt="Vermont" href="Park?searchString=Vermont">
+                <area shape="rect" coords="679, 303, 735, 316" alt="Virginia" href="Park?searchString=Virginia">
+                <area shape="rect" coords="56, 53, 128, 115" alt="Washington" href="Park?searchString=Washington">
+                <area shape="rect" coords="654, 283, 700, 268" alt="West Virginia" href="Park?searchString=West Virginia">
+                <area shape="rect" coords="516, 107, 561, 192" alt="Wisconsin" href="Park?searchString=Wisconsin">
+                <area shape="rect" coords="227, 147, 320, 223" alt="Wyoming" href="Park?searchString=Wyoming">
+            </map>
         </div>
-    }
+
+        <div class="search-results">
+            <div class="card-deck">
+                @foreach (var park in Model)
+                {
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@park.Name</h5>
+                            <h5 class="card-text">@park.State </h5>
+
+                            <img class="model-image-one" src="@park.ImageUrlOne" alt="">
+                            <a href="@Url.Action("Details", "Park", new {  id= park.Id  })" class="btn btn-primary">View Park</a>
+                        </div>
+
+                    </div>
+
+                }
+        </div>
+    </div>
+
+
 
 
 

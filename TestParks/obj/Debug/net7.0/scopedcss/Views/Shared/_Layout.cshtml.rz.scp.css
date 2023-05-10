@@ -1,10 +1,10 @@
 
 
 a.navbar-brand[b-1sjrh5tb35] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-  
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    
 }
 
 a[b-1sjrh5tb35] {
@@ -18,9 +18,10 @@ a[b-1sjrh5tb35] {
 }
 
 .nav-pills .nav-link.active[b-1sjrh5tb35], .nav-pills .show > .nav-link[b-1sjrh5tb35] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    
 }
 
 .border-top[b-1sjrh5tb35] {

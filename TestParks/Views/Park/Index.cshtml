@@ -1,9 +1,14 @@
 ﻿@model IEnumerable<TestParks.Models.Park>
 
 
-<a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]"><span style="margin-right: 350px">Sort by Name</span></a>
-<a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_asc" ? "state_desc" : "state_asc")"><span style="margin-right: 350px">Sort by State (asc)</span></a>
-<a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_desc" ? "state_asc" : "state_desc")">Sort by State(desc)</a>
+<div class="all-parks">
+    <button type="button" onclick="location.href='@Url.Action("Index", new { sortOrder = ViewData["NameSortParm"] })'">
+        <span>ALL PARKS</span>
+    </button>
+</div>
+
+@*<a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_asc" ? "state_desc" : "state_asc")"><span style="margin-right: 350px">Sort by State (asc)</span></a>
+<a asp-action="Index" asp-route-sortOrder="@((string?) ViewData["StateSortParm"] == "state_desc" ? "state_asc" : "state_desc")">Sort by State(desc)</a>*@
 
     <div class="d-flex mt-3">
         <div class="map-container mr-3">

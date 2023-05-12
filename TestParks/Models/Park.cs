@@ -14,7 +14,7 @@
         public string? DateEstAsPark { get; set; }
         public string? Area { get; set; }
         public string? Description { get; set; }
-        public string? Geography { get; set; }
+        public string? DescriptionTwo { get; set; }
         public List<Comment>? Comments { get; set; }
     }
 }

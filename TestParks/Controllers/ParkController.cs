@@ -12,7 +12,7 @@ namespace TestParks.Controllers
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
 
-            List<Park> parks = await RetrieveNationalParks();
+            List<Park> parks = RetrieveNationalParks();
 
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["StateSortParm"] = String.IsNullOrEmpty(sortOrder) ? "state_desc" : "";
@@ -47,7 +47,7 @@ namespace TestParks.Controllers
             return View(parks);
         }
 
-        public async Task<List<Park>> RetrieveNationalParks()
+        public List<Park> RetrieveNationalParks()
         {
             string jsonUrl = "https://raw.githubusercontent.com/GiorgioMotorola/ParksJson/main/json";
 
@@ -63,7 +63,7 @@ namespace TestParks.Controllers
         public async Task<IActionResult> Details(int id)
         {
 
-            List<Park> parks = await RetrieveNationalParks();
+            List<Park> parks = RetrieveNationalParks();
 
 
             Park park = parks.FirstOrDefault(p => p.Id == id);

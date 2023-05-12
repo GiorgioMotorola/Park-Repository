@@ -183,6 +183,27 @@
     margin-left: 500px;
 }
 
+.all-parks button[b-fu46n5x1v5] {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 50px;
+    background-color: black;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+    color: rgb(250,230,158);
+}
+
+    .all-parks button:hover[b-fu46n5x1v5] {
+        background-color: dimgrey; 
+    }
+
+    .all-parks button:focus[b-fu46n5x1v5] {
+        outline: none;
+    }
+
 
 
 

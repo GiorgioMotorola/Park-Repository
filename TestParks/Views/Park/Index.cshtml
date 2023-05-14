@@ -70,6 +70,13 @@
             </map>
         </div>
 
+    <div class="all-parks">
+        <button type="button" onclick="location.href='@Url.Action("Index", new { sortOrder = ViewData["NameSortParm"] })'">
+            <span>ALL PARKS</span>
+        </button>
+    </div>
+    
+
         <div class="search-results">
             <div class="card-deck">
                 @foreach (var park in Model)
@@ -89,7 +96,7 @@
         </div>
     </div>
 
-
+    
 
 
 

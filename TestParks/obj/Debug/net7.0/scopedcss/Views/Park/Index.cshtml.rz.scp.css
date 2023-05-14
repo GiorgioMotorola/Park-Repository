@@ -13,8 +13,8 @@
 
 .card[b-fu46n5x1v5] {
     position: relative;
-    width: 800px;
-    height: 400px;
+    min-width: 800px;
+    min-height: 400px;
     border: 1px solid #ccc;
     margin-left: 250px;
     opacity: 1;
@@ -26,8 +26,8 @@
     animation: slide-in-left-b-fu46n5x1v5 0.5s ease;
     animation-fill-mode: both;
     animation-delay: 0.3s;
-    
-    
+    min-height: contain;
+    min-width: contain;
 }
 
 @keyframes slide-in-left-b-fu46n5x1v5 {
@@ -71,6 +71,7 @@
     flex: 0 0 auto;
     margin-left: -300px;
     position: fixed;
+    margin-top: 100px;
 }
 
 .search-results[b-fu46n5x1v5] {
@@ -89,6 +90,8 @@
     cursor: pointer;
     transition: background-color 0.2s ease-out;
     color: rgb(250,230,158);
+    width: 150px;
+    
 }
 
     .all-parks button:hover[b-fu46n5x1v5] {

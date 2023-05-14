@@ -7,6 +7,15 @@ a.navbar-brand[b-1sjrh5tb35] {
     
 }
 
+.navbar[b-1sjrh5tb35] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    
+}
+
 a[b-1sjrh5tb35] {
   color: #0077cc;
 }
